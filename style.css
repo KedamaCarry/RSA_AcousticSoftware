@@ -1,0 +1,174 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 20px;
+  background-color: #e8e8e8;
+}
+
+/* Select Folderボタンのスタイル */
+button {
+  color: #272727;
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #e0e0e0;
+  border: 1px solid #ddd;
+  transition: all 0.3s;
+  box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;
+  margin-bottom: 40px;
+}
+
+button:active {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #bebebe, inset -4px -4px 12px #bebebe;
+}
+
+/* グリッドコンテナの設定 */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(200px, 1fr)
+  ); /* 各アイテムの幅を最低200pxに設定 */
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+  grid-auto-flow: dense;
+}
+
+/* audio-itemの幅を表示名に合わせて自動調整 */
+.audio-item {
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+  border-radius: 20px;
+  background: #e0e0e0;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  min-width: 200px; /* 表示名が収まる最小幅 */
+  max-width: 300px; /* 最大幅を設定 */
+  overflow: hidden;
+}
+
+.audio-item.playing {
+  background-color: #f0f8ff;
+}
+
+/* 表示名が収まるように幅を調整 */
+.display-name {
+  width: 100%; /* audio-item内で全幅を使う */
+  margin-bottom: 8px;
+  padding: 4px;
+  text-align: center;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  white-space: nowrap; /* テキストを1行に制限 */
+  overflow: hidden;
+  text-overflow: ellipsis; /* 長いテキストは省略表示 */
+}
+
+.seek-bar {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.time-display {
+  display: block;
+  font-size: 0.9em;
+  text-align: center;
+  margin-top: 4px;
+}
+
+.effect-slider {
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* トグルスイッチの外枠 */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  border-radius: 9999px;
+}
+
+.toggle-switch input[type="checkbox"] {
+  display: none;
+}
+
+.toggle-switch .slider {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-color: #272727;
+  border-radius: 9999px;
+  box-shadow: 0px 0px 12px -6px #fefefe;
+  transition: background 0.4s;
+}
+
+.toggle-switch .slider::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  background-color: #5e5e5e;
+  border-radius: 50%;
+  transition: all 0.4s cubic-bezier(1, 0, 0, 1);
+}
+
+.toggle-switch .slider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  clip-path: polygon(25% 0, 75% 50%, 25% 100%);
+  background-color: #fefefe;
+  transition: all 0.4s cubic-bezier(1, 0, 0, 1);
+}
+
+.toggle-switch input[type="checkbox"]:checked + .slider {
+  background-color: #5e5e5e;
+}
+
+.toggle-switch input[type="checkbox"]:checked + .slider::before {
+  background-color: #f43f5e;
+  transform: translateX(30px);
+}
+
+.toggle-switch input[type="checkbox"]:checked + .slider::after {
+  left: calc(15px + 30px);
+  width: 8px;
+  height: 8px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* 表示名のスタイル */
+.display-name {
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  height: 15px;
+  width: 150px;
+  padding: 1em;
+  background-color: #ccc;
+  box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+  transition: 300ms ease-in-out;
+}
+
+.display-name:focus {
+  background-color: white;
+  transform: scale(1.05);
+  box-shadow: 13px 13px 100px #969696, -13px -13px 100px #ffffff;
+}

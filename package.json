@@ -1,0 +1,44 @@
+{
+  "name": "rsa_acousticsoftware",
+  "version": "1.0.0",
+  "description": "Acoustic software for RSA",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "build": {
+    "appId": "com.yourcompany.rsa_acoustic_software",
+    "productName": "RSA Acoustic Software",
+    "files": [
+      "main.js",
+      "index.html",
+      "preload.js",
+      "renderer.js",
+      "style.css",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KedamaCarry/RSA_AcousticSoftware.git"
+  },
+  "author": "KedamaCarry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KedamaCarry/RSA_AcousticSoftware/issues"
+  },
+  "homepage": "https://github.com/KedamaCarry/RSA_AcousticSoftware#readme",
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  }
+}
