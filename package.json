@@ -25,6 +25,7 @@
     },
     "win": {
       "sign": false,
+      "icon":"spiral_triangles.ico",
       "target": "portable"
     }
   },
