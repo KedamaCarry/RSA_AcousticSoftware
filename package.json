@@ -24,7 +24,8 @@
       "output": "dist"
     },
     "win": {
-      "target": "nsis"
+      "sign": false,
+      "target": "portable"
     }
   },
   "repository": {
