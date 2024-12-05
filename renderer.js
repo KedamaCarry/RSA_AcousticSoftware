@@ -21,41 +21,15 @@ document.getElementById("select-folder").addEventListener("click", async () => {
     const reverbNode = audioContext.createConvolver();
     reverbNode.buffer = generateImpulseResponse(audioContext, 1, 2);
 
-    // ディレイノード
-    const delayNode = audioContext.createDelay();
-    delayNode.delayTime.value = 0;
-
-    // エコー用のフィードバックゲインノード
-    const feedbackGainNode = audioContext.createGain();
-    feedbackGainNode.gain.value = 0;
-    delayNode.connect(feedbackGainNode);
-    feedbackGainNode.connect(delayNode);
-
     // エフェクトのオンオフ状態を管理するチェックボックス
     const reverbCheckbox = document.createElement("input");
     reverbCheckbox.type = "checkbox";
     reverbCheckbox.addEventListener("change", updateConnections);
 
-    const delayCheckbox = document.createElement("input");
-    delayCheckbox.type = "checkbox";
-    delayCheckbox.addEventListener("change", updateConnections);
-
-    const echoCheckbox = document.createElement("input");
-    echoCheckbox.type = "checkbox";
-    echoCheckbox.addEventListener("change", updateConnections);
-
     // ラベルを追加
     const reverbLabel = document.createElement("label");
     reverbLabel.textContent = "Reverb";
     reverbLabel.appendChild(reverbCheckbox);
-
-    const delayLabel = document.createElement("label");
-    delayLabel.textContent = "Delay";
-    delayLabel.appendChild(delayCheckbox);
-
-    const echoLabel = document.createElement("label");
-    echoLabel.textContent = "Echo";
-    echoLabel.appendChild(echoCheckbox);
 
     // 表示名の入力フィールド
     const displayNameInput = document.createElement("input");
@@ -87,18 +61,44 @@ document.getElementById("select-folder").addEventListener("click", async () => {
         container.classList.remove("playing");
       }
     });
+    // 音量スライダーコンテナを作成
+    const volumeSliderContainer = document.createElement("div");
+    volumeSliderContainer.classList.add("volume-slider-container");
 
-    // 音量調整スライダー
+    // 音量アイコンを作成
+    const volumeIcon = document.createElement("div");
+    volumeIcon.classList.add("volume-icon");
+    volumeIcon.textContent = "🔊"; // 適当な音量アイコン、またはアイコンフォントなど
+
+    // 音量スライダーを作成
     const volumeSlider = document.createElement("input");
     volumeSlider.type = "range";
     volumeSlider.min = 0;
     volumeSlider.max = 1;
     volumeSlider.step = 0.01;
-    volumeSlider.value = audio.volume;
+    volumeSlider.value = 0.25; // 初期値を0.5に設定（最大音量の半分）
+    volumeSlider.classList.add("volume-slider");
+    volumeSlider.textContent = "音量";
     volumeSlider.addEventListener("input", () => {
       audio.volume = volumeSlider.value;
     });
 
+    volumeSlider.addEventListener("wheel", (event) => {
+      event.preventDefault(); // デフォルトのスクロール動作を防止
+      const delta = Math.sign(event.deltaY) * 0.01; // ホイールの上下を判定し音量ステップを設定
+      volumeSlider.value = Math.min(
+        Math.max(parseFloat(volumeSlider.value) - delta, 0),
+        1
+      ); // 0～1の範囲に制限
+      audio.volume = volumeSlider.value; // 音量を反映
+    });
+
+    // コンテナにアイコンとスライダーを追加
+    volumeSliderContainer.appendChild(volumeIcon);
+    volumeSliderContainer.appendChild(volumeSlider);
+
+    // 既存のcontainerに音量スライダーコンテナを追加
+    container.appendChild(volumeSliderContainer);
     // シークバー
     const seekBar = document.createElement("input");
     seekBar.type = "range";
@@ -153,28 +153,6 @@ document.getElementById("select-folder").addEventListener("click", async () => {
       );
     });
 
-    const delaySlider = document.createElement("input");
-    delaySlider.type = "range";
-    delaySlider.min = 0;
-    delaySlider.max = 1;
-    delaySlider.step = 0.01;
-    delaySlider.value = 0;
-    delaySlider.classList.add("effect-slider");
-    delaySlider.addEventListener("input", () => {
-      delayNode.delayTime.value = delaySlider.value;
-    });
-
-    const echoSlider = document.createElement("input");
-    echoSlider.type = "range";
-    echoSlider.min = 0;
-    echoSlider.max = 1;
-    echoSlider.step = 0.01;
-    echoSlider.value = 0;
-    echoSlider.classList.add("effect-slider");
-    echoSlider.addEventListener("input", () => {
-      feedbackGainNode.gain.value = echoSlider.value;
-    });
-
     // オンオフ状態に応じてエフェクトノードの接続を更新
     function updateConnections() {
       sourceNode.disconnect();
@@ -184,19 +162,26 @@ document.getElementById("select-folder").addEventListener("click", async () => {
         lastNode.connect(reverbNode);
         lastNode = reverbNode;
       }
-
-      if (delayCheckbox.checked) {
-        lastNode.connect(delayNode);
-        lastNode = delayNode;
-      }
-
-      if (echoCheckbox.checked) {
-        lastNode.connect(feedbackGainNode);
-        lastNode = feedbackGainNode;
-      }
-
       lastNode.connect(audioContext.destination);
     }
+
+    // ループ再生を管理するチェックボックス
+    const loopCheckbox = document.createElement("input");
+    loopCheckbox.type = "checkbox";
+    loopCheckbox.id = `loop-${index}`;
+    loopCheckbox.addEventListener("change", () => {
+      audio.loop = loopCheckbox.checked; // チェックされた場合はループ再生を有効にする
+    });
+
+    // ループラベルを追加
+    const loopLabel = document.createElement("label");
+    loopLabel.setAttribute("for", `loop-${index}`);
+    loopLabel.textContent = "ループ再生";
+    loopLabel.style.marginLeft = "10px"; // 見やすさのための余白調整
+    loopLabel.appendChild(loopCheckbox);
+
+    // ループ設定を表示するためにコンテナに追加
+    container.appendChild(loopLabel);
 
     // 各要素をコンテナに追加
     container.appendChild(displayNameInput);
@@ -206,10 +191,6 @@ document.getElementById("select-folder").addEventListener("click", async () => {
     container.appendChild(timeDisplay);
     container.appendChild(reverbLabel);
     container.appendChild(reverbSlider);
-    container.appendChild(delayLabel);
-    container.appendChild(delaySlider);
-    container.appendChild(echoLabel);
-    container.appendChild(echoSlider);
     audioList.appendChild(container);
   });
 });
