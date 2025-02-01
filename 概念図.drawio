@@ -4,44 +4,41 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="keAjBSVCI4cgzY9a_17a-16" value="" style="group" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="240" y="290" width="280" height="260" as="geometry" />
-        </mxCell>
-        <mxCell id="keAjBSVCI4cgzY9a_17a-2" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="keAjBSVCI4cgzY9a_17a-16">
+        <mxCell id="keAjBSVCI4cgzY9a_17a-2" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="40" y="130" as="sourcePoint" />
-            <mxPoint x="240" y="130" as="targetPoint" />
+            <mxPoint x="290" y="420" as="sourcePoint" />
+            <mxPoint x="490" y="420" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="keAjBSVCI4cgzY9a_17a-3" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="keAjBSVCI4cgzY9a_17a-16">
+        <mxCell id="keAjBSVCI4cgzY9a_17a-3" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="140" y="30" as="sourcePoint" />
-            <mxPoint x="140" y="230" as="targetPoint" />
+            <mxPoint x="390" y="320" as="sourcePoint" />
+            <mxPoint x="390" y="520" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="keAjBSVCI4cgzY9a_17a-4" value="&lt;b&gt;真面目&lt;br&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="keAjBSVCI4cgzY9a_17a-16">
-          <mxGeometry x="110" width="60" height="30" as="geometry" />
+        <mxCell id="keAjBSVCI4cgzY9a_17a-4" value="&lt;b&gt;真面目&lt;br&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="360" y="290" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="keAjBSVCI4cgzY9a_17a-5" value="&lt;b&gt;不真面目&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="keAjBSVCI4cgzY9a_17a-16">
-          <mxGeometry x="110" y="230" width="60" height="30" as="geometry" />
+        <mxCell id="keAjBSVCI4cgzY9a_17a-5" value="&lt;b&gt;不真面目&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="360" y="520" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="keAjBSVCI4cgzY9a_17a-6" value="&lt;b&gt;保守的&lt;br&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="keAjBSVCI4cgzY9a_17a-16">
-          <mxGeometry x="240" y="120" width="40" height="20" as="geometry" />
+        <mxCell id="keAjBSVCI4cgzY9a_17a-6" value="&lt;b&gt;保守的&lt;br&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="490" y="410" width="40" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="keAjBSVCI4cgzY9a_17a-7" value="&lt;b&gt;革新的&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="keAjBSVCI4cgzY9a_17a-16">
-          <mxGeometry y="120" width="40" height="20" as="geometry" />
+        <mxCell id="keAjBSVCI4cgzY9a_17a-7" value="&lt;b&gt;革新的&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="410" width="40" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="keAjBSVCI4cgzY9a_17a-10" value="&lt;div&gt;&lt;b&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;第一象限&lt;/span&gt;&lt;/b&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;公務員タイプ&lt;/b&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="keAjBSVCI4cgzY9a_17a-16">
-          <mxGeometry x="150" y="40" width="120" height="70" as="geometry" />
+        <mxCell id="keAjBSVCI4cgzY9a_17a-10" value="&lt;div&gt;&lt;b&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;第一象限&lt;/span&gt;&lt;/b&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;守護者タイプ&lt;/b&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="400" y="330" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="keAjBSVCI4cgzY9a_17a-13" value="&lt;div&gt;&lt;b&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;第二象限&lt;/span&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;研究者タイプ&lt;/b&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="keAjBSVCI4cgzY9a_17a-16">
-          <mxGeometry x="10" y="40" width="120" height="70" as="geometry" />
+        <mxCell id="keAjBSVCI4cgzY9a_17a-13" value="&lt;div&gt;&lt;b&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;第二象限&lt;/span&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;開拓者タイプ&lt;/b&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="260" y="330" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="keAjBSVCI4cgzY9a_17a-14" value="&lt;div&gt;&lt;b&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;第三象限&lt;/span&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;アーティストタイプ&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="keAjBSVCI4cgzY9a_17a-16">
-          <mxGeometry x="10" y="150" width="120" height="70" as="geometry" />
+        <mxCell id="keAjBSVCI4cgzY9a_17a-14" value="&lt;div&gt;&lt;b&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;第三象限&lt;/span&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;冒険家タイプ&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="260" y="440" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="keAjBSVCI4cgzY9a_17a-15" value="&lt;div&gt;&lt;b&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;第四象限&lt;/span&gt;&lt;/b&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;ニートタイプ&lt;/b&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="keAjBSVCI4cgzY9a_17a-16">
-          <mxGeometry x="150" y="150" width="120" height="70" as="geometry" />
+        <mxCell id="keAjBSVCI4cgzY9a_17a-15" value="&lt;div&gt;&lt;b&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;第四象限&lt;/span&gt;&lt;/b&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;ニートタイプ&lt;/b&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="400" y="440" width="120" height="70" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
